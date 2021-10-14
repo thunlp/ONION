@@ -28,7 +28,7 @@ def evaluaion(loader):
         for padded_text, attention_masks, labels in loader:
             if torch.cuda.is_available():
                 padded_text, attention_masks, labels = padded_text.cuda(), attention_masks.cuda(), labels.cuda()
-            output = model(padded_text, attention_masks)
+            output = model(padded_text, attention_masks)[0]
             _, idx = torch.max(output, dim=1)
             correct = (idx == labels).sum().item()
             total_correct += correct
