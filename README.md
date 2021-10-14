@@ -24,7 +24,7 @@ CUDA_VISIBLE_DEVICES=0 python run_poison_bert.py  --data sst-2 --transfer False 
 To test ONION defense on SST-2 against badnets:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python test_poison_processed_bert_search.py  --data sst-2 --model_path poison_bert.pkl  --poison_data_path ./data/badnets/sst-2/test.tsv  --clean_data_path ./data/clean_data/sst-2/dev.tsv
+CUDA_VISIBLE_DEVICES=0 python test_defense.py  --data sst-2 --model_path poison_bert.pkl  --poison_data_path ./data/badnets/sst-2/test.tsv  --clean_data_path ./data/clean_data/sst-2/dev.tsv
 ```
 
 Here, --model_path is the --save_path in run_poison_bert.py to assign the path to saved backdoor model. 
