@@ -5,8 +5,6 @@ The data folder contain some of our experimented clean data and rare word based 
 
 
 
-
-
 ## Train a Poison Model
 
 If you want to test the defense of ONION, frist you need to train a poison model :
@@ -14,8 +12,6 @@ If you want to test the defense of ONION, frist you need to train a poison model
 ```bash
 CUDA_VISIBLE_DEVICES=0 python run_poison_bert.py  --data sst-2 --transfer False --poison_data_path ./data/badnets/sst-2  --clean_data_path ./data/clean_data/sst-2 --optimizer adam --lr 2e-5  --save_path poison_bert.pkl
 ```
-
-
 
 
 
@@ -31,9 +27,22 @@ Here, --model_path is the --save_path in run_poison_bert.py to assign the path t
 
 
 
-
-
 If you want to use other datasets, just follow the file structures, and go over the above procedure. 
+
+
+
+## Citation
+
+Please kindly cite our paper:
+
+```
+@article{qi2020onion,
+  title={Onion: A simple and effective defense against textual backdoor attacks},
+  author={Qi, Fanchao and Chen, Yangyi and Li, Mukai and Yao, Yuan and Liu, Zhiyuan and Sun, Maosong},
+  journal={arXiv preprint arXiv:2011.10369},
+  year={2020}
+}
+```
 
 
 
